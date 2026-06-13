@@ -111,7 +111,7 @@ Throughout the years, SimPEG became widely used by researchers and industry prof
 Newer research methods such in joint inversions, in leveraging aspects of machine learning, and in new optimization algorithms exposed areas where the initial framework had made some rigid assumptions.
 These assumptions imposed some barriers when trying to implement such new methods with SimPEG, and forced users to develop complex solutions to circumvent these difficulties.
 
-In this work we present a prototype for a redesign of SimPEG's inversion framework that  supports this next generation of research by improving its design, usability, extensibility, and code readability.
+In this work we present a prototype for a redesign of SimPEG's inversion framework that supports this next generation of research by improving its design, usability, extensibility, and code readability.
 Its final goal is to facilitate new research avenues by allowing users to easily interact with and extend the framework.
 
 
@@ -169,11 +169,11 @@ The new framework offers some built-in minimizers like a conjugate gradient func
 
 == The Inversion class
 
-During the minimization process described in equation @inversion, the objective function $phi.alt(bold(m))$ is left unchaged.
-Nonethless, several inversion techniques involve the search of values for hyperparameters (like the trade-off parameter $beta$), or the update of certain parameters within the objective functions (e.g. iterative re-weighted least-squares) during the inversion process itself.
+During the minimization process described in equation @inversion, the objective function $phi.alt(bold(m))$ is left unchanged.
+Nonetheless, several inversion techniques involve the search of values for hyperparameters (like the trade-off parameter $beta$), or the update of certain parameters within the objective functions (e.g. iterative re-weighted least-squares) during the inversion process itself.
 Moreover, any inversion process needs a _stopping criterion_, i.e. a condition that when met should force the inversion to stop. For example, if the observed data is recovered within a certain uncertainty.
 
-These extra steps introduce some complexity into the inversion process, that can be summarized as: (i) minimize the objective function, (ii) check if the stopping criterion is satisfied, (iii) modify hyperparameters, (iv) continue to (i).
+These extra steps introduce some complexity into the inversion process, that can be summarized as:
 
 + Minimize the objective function. <firstitem>
 + Check if the stopping criterion is satisfied.
