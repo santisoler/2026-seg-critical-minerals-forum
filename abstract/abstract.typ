@@ -145,7 +145,7 @@ In the classical form, the objective function is defined as a linear combination
 $ phi.alt(bold(m)) = phi.alt_d (bold(m)) + beta phi.alt_m (bold(m)), $ <classic_objective>
 
 where $beta$ is the _trade-off parameter_.
-Although many geophysical inversions can be described as in equation @classic_objective, many others don't follow that form: e.g. some parametric inversions that don't require regularization terms, inversions based on a primal-dual space that involve minimization in different functional spaces.
+Although many geophysical inversions can be described as in @classic_objective, many others don't follow that form: e.g. some parametric inversions that don't require regularization terms, inversions based on a primal-dual space that involve minimization in different functional spaces.
 
 The new inversion framework is composed mainly by three parts: the _objective function_ that will be minimized, the _minimizer_ that will be used to iteratively find a minimum of the objective function, and a new #raw("Inversion") class that configures and groups together a full inversion.
 
@@ -156,7 +156,7 @@ The new framework requires every objective function to be a child of a base #cla
 It also requires it to implement methods like #function("gradient") and #function("jacobian") that return the first and second derivatives of the objective function for a particular model array.
 
 Objective functions can be multiplied by scalars and added together, allowing users to create any arbitrary linear combination of a set of objective functions.
-The #class("Objective") base class doesn't impose any rigid assumption on the inner workings of its children, only on the interface of its base methods. This enables users to define a wide range of objective functions: from a classical form like the one in equation @classic_objective, to any other possible linear combination.
+The #class("Objective") base class doesn't impose any rigid assumption on the inner workings of its children, only on the interface of its base methods. This enables users to define a wide range of objective functions: from a classical form like the one in @classic_objective, to any other possible linear combination.
 
 == Minimizer
 
@@ -169,7 +169,7 @@ The new framework offers some built-in minimizers like a conjugate gradient func
 
 == The Inversion class
 
-During the minimization process described in equation @inversion, the objective function $phi.alt(bold(m))$ is left unchanged.
+During the minimization process described in @inversion, the objective function $phi.alt(bold(m))$ is left unchanged.
 Nonetheless, several inversion techniques involve the search of values for hyperparameters (like the trade-off parameter $beta$), or the update of certain parameters within the objective functions (e.g. iterative re-weighted least-squares) during the inversion process itself.
 Moreover, any inversion process needs a _stopping criterion_, i.e. a condition that when met should force the inversion to stop. For example, if the observed data is recovered within a certain uncertainty.
 
