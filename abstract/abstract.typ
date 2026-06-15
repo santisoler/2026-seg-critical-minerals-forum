@@ -2,13 +2,14 @@
   paper: "us-letter",
   numbering: "1/1",
   columns: 2,
+  margin: (top: 1in, bottom: 1in, left: 0.99in, right: 0.99in),
 )
 #set text(
   font: "Times New Roman",
   size: 9pt,
 )
 #show heading: set text(size: 9pt)
-#show heading: set block(below: 1em, above: 1.5em)
+#show heading: set block(below: 1em, above: 1.3em)
 #show heading.where(level: 2): it => text(weight: "regular")[#emph(it)]
 #set par(
   justify: true,
@@ -96,16 +97,13 @@ The redesign is motivated by our experience experimenting with newer inversion s
 We ran into rigid assumptions in the existing framework, and we aim to improve the interface to support this work.
 The new prototype is aimed to be more modular, extensible, flexible and easier to read, with the ultimate goal of facilitating new research avenues and ease its use for practitioners in mineral exploration.
 
-
-
-
 = Introduction
 
 SimPEG is an open-source Python library that supports simulations and inversions of many geophysical surveys such as gravity and magnetics, resistivity (DC), induced polarization (IP), time and frequency domain electromagnetic data with controlled or natural sources, and more.
 It was started over a decade ago with the aim of being a modular and extensible toolbox for research and resource exploration.
 Since then, SimPEG has become widely used by researchers and industry professionals, who rely on it for generating reproducible and transparent workflows.
 
-Newer research methods such as in joint inversions, in leveraging aspects of machine learning, and in new optimization algorithms exposed areas where the initial framework had made some rigid assumptions.
+Newer research methods such as in joint inversions, in leveraging aspects of machine learning, and in new optimization algorithms exposed areas where the initial framework had made some rigid assumptions (@kuttai2026, @xu2023, @pokar2026).
 These assumptions imposed some barriers for users trying to implement such new methods with SimPEG, and forced them to develop complex solutions to circumvent these difficulties.
 
 In this work, we present a prototype for a redesign of SimPEG’s inversion framework that supports this next generation of research by improving its design, usability, extensibility, and code readability.
@@ -176,8 +174,7 @@ Users can also pause the inversion process and resume it later, creating a more 
 The stopping criterion that the #class("Inversion") class takes can be a simple function that returns a _boolean_ upon a condition for the current model array, or it can be a #class("Condition") object, that allows users to add more complexity.
 #class("Condition") objects can be combined through logical binary operators to create a single stopping criterion object that can be passed to the #class("Inversion").
 
-The #class("Inversion") object can also produce an _inversion log_, as a table that is printed to the user to provide information about each iteration.
-The inversion log can be easily customized, or even replaced entirely by a user-defined one.
+The #class("Inversion") object can produce an _inversion log_, as a table that is printed to the user to provide information about each iteration, which can be customized or replaced entirely by a user-defined one.
 
 
 == Example
@@ -226,7 +223,6 @@ for model in inversion:
     # Print some information between iterations.
     print(f"Iteration {inversion.counter}")
     print(f"  - Data misfit: {data_misfit(model)}")
-
 # Last model is the inverted one
 inverted_model = model
 ```
@@ -237,3 +233,6 @@ We have created a prototype of SimPEG’s new inversion framework that is more m
 The prototype is available at https://github.com/simpeg/inversion-design-ideas under the open-source MIT License.
 Our goal is to progressively incorporate it into SimPEG in the near future: first as an experimental submodule, and then make it the preferred way to run inversions.
 We invite everyone to experiment with it and provide feedback.
+
+
+#bibliography("references.bib")
