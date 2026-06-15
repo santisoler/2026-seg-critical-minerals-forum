@@ -156,7 +156,7 @@ The new framework offers some built-in minimizers like a conjugate gradient func
 == The Inversion class
 
 During the minimization process described in @inversion, the objective function $phi.alt(bold(m))$ is left unchanged.
-Nonetheless, several inversion techniques involve modifying hyperparameter values algorithmically.
+Nonetheless, several inversion techniques involve modifying hyperparameter values algorithmically during the inversion process.
 For example, using a beta-cooling strategy, or updating parameters in an iteratively re-weighted least squares approach.
 Moreover, any inversion process needs a _stopping criterion_, i.e. a condition, that when met causes the inversion to stop.
 For example, if the data misfit reaches a certain target.
@@ -173,11 +173,8 @@ The new inversion framework ships a #class("Inversion") class that configures a 
 The #class("Inversion") object can also be iterated over, enabling users to introduce intermediate steps after each iteration like visualizing results.
 Users can also pause the inversion process and resume it later, creating a more interactive experience.
 
-The stopping criterion that the #class("Inversion") class takes can be a simple function that returns a _boolean_ upon a condition for the current model array, or it can be a #class("Condition") object, that allow to add more complexity to such conditions.
-#class("Condition") objects can be combined through `AND` , `OR` and `XOR` logical binary operators to create a single stopping criterion object that can be passed to the #class("Inversion").
-
 The stopping criterion that the #class("Inversion") class takes can be a simple function that returns a _boolean_ upon a condition for the current model array, or it can be a #class("Condition") object, that allows users to add more complexity.
-#class("Condition") objects can be combined through logical binary operators to create a single stopping criterion object that can be passed to the Inversion.
+#class("Condition") objects can be combined through logical binary operators to create a single stopping criterion object that can be passed to the #class("Inversion").
 
 The #class("Inversion") object can also produce an _inversion log_, as a table that is printed to the user to provide information about each iteration.
 The inversion log can be easily customized, or even replaced entirely by a user-defined one.
@@ -229,6 +226,7 @@ for model in inversion:
     # Print some information between iterations.
     print(f"Iteration {inversion.counter}")
     print(f"  - Data misfit: {data_misfit(model)}")
+
 # Last model is the inverted one
 inverted_model = model
 ```
