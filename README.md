@@ -20,7 +20,7 @@ Lindsey Heagy<sup>1</sup>
 Abstract presented at the [SEG Critical Minerals Forum 2026][seg-2026] (October 27-29, 2026).
 
 [abstract-pdf]: https://github.com/santisoler/2026-seg-critical-minerals-forum/releases/download/v1/abstract.pdf
-[slides-pdf]: https://raw.githubusercontent.com/santisoler/2026-seg-critical-minerals-forum/main/slides/slides.pdf
+[slides-pdf]: https://github.com/santisoler/2026-seg-critical-minerals-forum/raw/main/slides/slides.pdf
 [seg-2026]: https://seg.org/calendar_events/critical-minerals-forum/
 
 ## License
