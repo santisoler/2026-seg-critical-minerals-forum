@@ -14,7 +14,7 @@ Lindsey Heagy<sup>1</sup>
 | | Information |
 |---:|:----|
 | When | Tuesday, 27 October |
-| Abstract | [abstract.pdf][abstract-pdf] |
+| Abstract | [soler2026.pdf][abstract-pdf] |
 | Slides | [slides.pdf][slides-pdf] |
 
 Abstract presented at the [SEG Critical Minerals Forum 2026][seg-2026] (October 27-29, 2026).
