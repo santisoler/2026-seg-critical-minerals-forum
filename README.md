@@ -13,7 +13,7 @@ Lindsey Heagy<sup>1</sup>
 
 | | Information |
 |---:|:----|
-| When | Tuesday, 27 October |
+| When | Tuesday 27, October |
 | Abstract | [soler2026.pdf][abstract-pdf] |
 | Slides | [slides.pdf][slides-pdf] |
 
